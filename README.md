@@ -12,3 +12,6 @@ This is the project for the API
 - Bcrypt
 - jwt
 - fetch
+
+# Postman Collection
+https://www.getpostman.com/collections/630b9280d5791c5fc253
