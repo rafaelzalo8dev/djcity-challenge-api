@@ -15,3 +15,8 @@ This is the project for the API
 
 # Postman Collection
 https://www.getpostman.com/collections/630b9280d5791c5fc253
+
+# Autor
+- Rafael Zavala
+- Release: 08/Dec/2021 
+- Please feel free to keep on touch at my mail: rafael.zavala@encora.com
