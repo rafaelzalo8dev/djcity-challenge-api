@@ -2,11 +2,13 @@ import express from 'express';
 import { login, verifyToken } from './controllers/auth.js';
 import { search } from './controllers/itunes.js';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
+app.use(cors());
 const port = 3001;
 
 app.get('/', (req, res) => {

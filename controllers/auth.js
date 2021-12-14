@@ -11,16 +11,17 @@ export function login (email, password) {
 
         if (!user)  {
             reject('There is any user with given email');
+        } else {
+            const isPasswordValid = await bcrypt.compare(password, user.password);
+            if (!isPasswordValid) {
+              reject('Usuario o contraseña incorrecta');
+            } else {
+                const token = jwt.sign({
+                    data: user,
+                }, secret, { expiresIn: 60 * 60 });
+                resolve({ user, token });
+            }
         }
-
-        const isPasswordValid = await bcrypt.compare(password, user.password);
-        if (!isPasswordValid) {
-          reject('Usuario o contraseña incorrecta');
-        }
-        const token = jwt.sign({
-            data: user,
-        }, secret, { expiresIn: 60 * 60 });
-        resolve({ user, token });
     });
 }
 
